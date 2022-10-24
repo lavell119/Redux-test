@@ -1,7 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function Test() {
+function Test() {
   return (
     <div>Test</div>
   )
 }
+
+
+export default connect()(Test)
