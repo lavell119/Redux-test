@@ -5,7 +5,10 @@ class Test2 extends Component {
   render() {
     console.log(this.props)
     return (
+      <>
       <div>Test2</div>
+      <button>Dispatch Test</button>
+      </>
     )
   }
 }
@@ -16,5 +19,10 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deletePost: (id) => { dispatch({type: 'DELETE_POST'}) }
+  }
+}
 
-export default connect(mapStateToProps)(Test2)
+export default connect(mapDispatchToProps, mapStateToProps)(Test2)
