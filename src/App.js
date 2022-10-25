@@ -1,4 +1,6 @@
 import Test from './components/Test'
+import Test2 from './components/Test2'
+
 import { Component } from 'react'
 
 class App extends Component {
@@ -6,7 +8,7 @@ class App extends Component {
   return (
     <>
     <div className="App">
-      < Test />
+      < Test2 />
     </div>
     </>
   );
