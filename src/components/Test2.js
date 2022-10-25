@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+
+
 class Test2 extends Component {
+  handleClick = () =>{
+    this.props.deletePost();
+  }
   render() {
     console.log(this.props)
     return (
       <>
       <div>Test2</div>
-      <button>Dispatch Test</button>
+      <button onClick={this.handleClick}>Dispatch Test</button>
       </>
     )
   }
@@ -21,8 +26,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    deletePost: (id) => { dispatch({type: 'DELETE_POST'}) }
+    deletePost: () => { dispatch({type: 'DELETE_POST'}) }
   }
 }
 
-export default connect(mapDispatchToProps, mapStateToProps)(Test2)
+export default connect(null, mapDispatchToProps)(Test2)
